@@ -503,3 +503,86 @@
 Processing PagesController#home (for 127.0.0.1 at 2014-06-05 15:20:16) [GET]
 Rendering pages/home
 Completed in 52ms (View: 51, DB: 0) | 200 OK [http://localhost/pages/home]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-05 18:11:42) [GET]
+
+ActionController::RoutingError (No route matches "/users/2" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-05 18:11:49) [GET]
+
+ActionController::RoutingError (No route matches "/users/1" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#home (for 127.0.0.1 at 2014-06-05 18:15:50) [GET]
+Rendering pages/home
+Completed in 76ms (View: 75, DB: 0) | 200 OK [http://localhost/pages/home]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 18:15:58) [GET]
+
+ActionView::MissingTemplate (Missing template pages/about.erb in view path /Users/user/RailsTutorials/sample_app/app/views):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 18:17:31) [GET]
+
+ActionView::MissingTemplate (Missing template pages/about.erb in view path /Users/user/RailsTutorials/sample_app/app/views):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 18:18:44) [GET]
+Rendering pages/about
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 18:51:45) [GET]
+Rendering pages/about
+Completed in 26ms (View: 25, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 18:52:42) [GET]
+Rendering pages/about
+Completed in 20ms (View: 1, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 18:53:22) [GET]
+Rendering pages/about
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 19:04:09) [GET]
+Rendering pages/about
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 19:05:06) [GET]
+Rendering pages/about
+Completed in 44ms (View: 43, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 19:05:09) [GET]
+Rendering pages/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 19:05:14) [GET]
+Rendering pages/about
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/pages/about]
+
+
+Processing PagesController#about (for 127.0.0.1 at 2014-06-05 19:06:34) [GET]
+Rendering template within layouts/application
+Rendering pages/about
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/pages/about]
