@@ -8,7 +8,13 @@ module ApplicationHelper
 	if @title.nil?
 	base_title
 	else
-	"#{base_title} | #{@title}" 
+	"#{base_title} | #{h(@title)}"
 	end
   end
+  def grav (str)
+  
+  	str.to_s.split("background:url(")[1].split("?")[0]
+
+ end
+
 end

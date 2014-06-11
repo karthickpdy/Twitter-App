@@ -1925,3 +1925,1803 @@ ActionController::UnknownAction (No action responded to index. Actions: new and 
   <internal:prelude>:10:in `synchronize'
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSCHEMA (86.9ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSQL (50.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20140610093837)
+Migrating to AddEmailUniquenessIndex (20140611052852)
+Migrating to AddPasswordToUsers (20140611074824)
+  [4;36;1mSQL (170.8ms)[0m   [0;1mALTER TABLE `users` ADD `encrypted_password` varchar(255)[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20140611074824')[0m
+  [4;36;1mSCHEMA (0.4ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSCHEMA (0.3ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSCHEMA (27.9ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20140610093837)
+Migrating to AddEmailUniquenessIndex (20140611052852)
+Migrating to AddPasswordToUsers (20140611074824)
+Migrating to AddSaltToUsers (20140611093016)
+  [4;36;1mSQL (131.8ms)[0m   [0;1mALTER TABLE `users` ADD `salt` varchar(255)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20140611093016')[0m
+  [4;36;1mSCHEMA (0.4ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSCHEMA (0.3ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSQL (1.4ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2014-06-11 15:28:55) [GET]
+Rendering template within layouts/application
+Rendering users/new
+Rendered layouts/_stylesheets (1.2ms)
+Rendered layouts/_header (1.0ms)
+Rendered layouts/_footer (0.8ms)
+Completed in 67ms (View: 66, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 15:28:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 15:28:56) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSCHEMA (0.3ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSCHEMA (0.2ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (157.5ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime, `encrypted_password` varchar(255), `salt` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (189.2ms)[0m   [0;1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSCHEMA (0.4ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (104.7ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `schema_migrations`[0m
+  [4;36;1mSQL (147.3ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSCHEMA (0.4ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20140611093016')[0m
+  [4;36;1mSQL (26.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20140610093837')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20140611052852')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20140611074824')[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 15:57:23) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: invalid multibyte char (US-ASCII)
+/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: syntax error, unexpected $end, expecting keyword_end
+￼before_save :encrypt_password
+ ^):
+  app/controllers/users_controller.rb:3:in `show'
+  <internal:prelude>:10:in `synchronize'
+
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2014-06-11 15:57:23) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::TemplateError (invalid byte sequence in US-ASCII) in /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/templates/rescues/diagnostics.erb:
+
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (23.3ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 15:58:34) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: invalid multibyte char (US-ASCII)
+/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: syntax error, unexpected $end, expecting keyword_end
+￼before_save :encrypt_password
+ ^):
+  app/controllers/users_controller.rb:3:in `show'
+  <internal:prelude>:10:in `synchronize'
+
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2014-06-11 15:58:34) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::TemplateError (invalid byte sequence in US-ASCII) in /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/templates/rescues/diagnostics.erb:
+
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (13.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 15:59:13) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: invalid multibyte char (US-ASCII)
+/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: syntax error, unexpected $end, expecting keyword_end
+￼before_save :encrypt_password
+ ^):
+  app/controllers/users_controller.rb:3:in `show'
+  <internal:prelude>:10:in `synchronize'
+
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2014-06-11 15:59:13) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::TemplateError (invalid byte sequence in US-ASCII) in /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/templates/rescues/diagnostics.erb:
+
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (13.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 15:59:54) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: invalid multibyte char (US-ASCII)
+/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: syntax error, unexpected $end, expecting keyword_end
+￼before_save :encrypt_password
+ ^):
+  app/controllers/users_controller.rb:4:in `show'
+  <internal:prelude>:10:in `synchronize'
+
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2014-06-11 15:59:54) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::TemplateError (invalid byte sequence in US-ASCII) in /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/templates/rescues/diagnostics.erb:
+
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (10.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:00:38) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: invalid multibyte char (US-ASCII)
+/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: syntax error, unexpected $end, expecting keyword_end
+￼before_save :encrypt_password
+ ^):
+  app/controllers/users_controller.rb:4:in `show'
+  <internal:prelude>:10:in `synchronize'
+
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2014-06-11 16:00:38) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::TemplateError (invalid byte sequence in US-ASCII) in /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/templates/rescues/diagnostics.erb:
+
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (12.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:00:41) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: invalid multibyte char (US-ASCII)
+/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: syntax error, unexpected $end, expecting keyword_end
+￼before_save :encrypt_password
+ ^):
+  app/controllers/users_controller.rb:4:in `show'
+  <internal:prelude>:10:in `synchronize'
+
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2014-06-11 16:00:41) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::TemplateError (invalid byte sequence in US-ASCII) in /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/templates/rescues/diagnostics.erb:
+
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (26.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:01:02) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: invalid multibyte char (US-ASCII)
+/Users/user/RailsTutorials/sample_app/app/models/user.rb:37: syntax error, unexpected $end, expecting keyword_end
+￼before_save :encrypt_password
+ ^):
+  app/controllers/users_controller.rb:4:in `show'
+  <internal:prelude>:10:in `synchronize'
+
+
+
+Processing ApplicationController#show (for 127.0.0.1 at 2014-06-11 16:01:02) [GET]
+  Parameters: {"id"=>"1"}
+
+ActionView::TemplateError (invalid byte sequence in US-ASCII) in /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/templates/rescues/diagnostics.erb:
+
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (11.0ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:01:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.7ms)
+Rendered layouts/_header (0.6ms)
+Rendered layouts/_footer (0.4ms)
+Completed in 47ms (View: 27, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:01:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:01:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:02:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:03:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:03:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:03:19) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#home (for 127.0.0.1 at 2014-06-11 16:03:25) [GET]
+Rendering template within layouts/application
+Rendering pages/home
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 33ms (View: 32, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:03:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:03:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#home (for 127.0.0.1 at 2014-06-11 16:03:29) [GET]
+Rendering template within layouts/application
+Rendering pages/home
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:03:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:03:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:08:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:08:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:08:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:14:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:14:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 23ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:14:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:55) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:14:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:14:57) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:15:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.6ms)
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:15:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:15:52) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:15:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:15:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:15:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:16:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 80ms (View: 3, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:16:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:16:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:16:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 13ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:16:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:16:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:17:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:17:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:17:59) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:18:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:18:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:18:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:18:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 28ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:18:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:18:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:18:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:18:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:18:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:19:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:19:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:19:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:20:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+
+ActionView::TemplateError (undefined method `email' for 1:Fixnum) on line #2 of app/views/users/show.html.erb:
+1: <h2>
+2: <%= gravatar_for @user.id %>
+3: <%= h @user.name %>
+4: </h2>
+
+    app/views/users/show.html.erb:2
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (16.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:21:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:21:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:21:11) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:21:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+
+ActionView::TemplateError (undefined method `email' for "example@railstutorial.org":String) on line #2 of app/views/users/show.html.erb:
+1: <h2>
+2: <%= gravatar_for @user.email %>
+3: <%= h @user.name %>
+4: </h2>
+
+    app/views/users/show.html.erb:2
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (28.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:21:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:21:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:21:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:21:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:21:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:21:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:22:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:22:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:22:46) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:23:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 9ms (View: 2, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:23:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:23:34) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:23:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 22ms (View: 2, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:23:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:23:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:23:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.4ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:23:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:23:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ActionController::Base#show (for 127.0.0.1 at 2014-06-11 16:35:53) [GET]
+  Parameters: {"id"=>"1"}
+
+NameError (undefined local variable or method `d' for main:Object):
+  app/helpers/grav_helper.rb:1:in `<top (required)>'
+  app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:4:in `<top (required)>'
+  app/controllers/users_controller.rb:1:in `<top (required)>'
+  <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:37:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 57ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:37:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:37:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.7ms)
+Rendered layouts/_header (0.4ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:37:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:37:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:38:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+
+ActionView::TemplateError (wrong number of arguments (1 for 0)) on line #2 of app/views/users/show.html.erb:
+1: <h2>
+2: <%= grav gravatar_for @user %>
+3: <%= h @user.name %>
+4: </h2>
+
+    app/helpers/grav_helper.rb:3:in `grav'
+    app/views/users/show.html.erb:2
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (16.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+/!\ FAILSAFE /!\  2014-06-11 16:38:35 +0530
+  Status: 500 Internal Server Error
+  /Users/user/RailsTutorials/sample_app/app/helpers/grav_helper.rb:3: syntax error, unexpected ':', expecting ';' or '\n'
+ def grav :s
+           ^
+/Users/user/RailsTutorials/sample_app/app/helpers/grav_helper.rb:8: syntax error, unexpected keyword_end, expecting $end
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `block in load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:250:in `depend_on'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:162:in `require_dependency'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:126:in `block in helper'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:120:in `block in helper'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/user/RailsTutorials/sample_app/app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+    /Users/user/RailsTutorials/sample_app/app/controllers/application_controller.rb:4:in `<top (required)>'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `block in load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:451:in `load_missing_constant'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:106:in `const_missing_with_dependencies'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:118:in `const_missing'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:89:in `rescue in dispatch'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `block in call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:10:in `synchronize'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `block in call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/chunked.rb:15:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/handler/mongrel.rb:67:in `process'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+/!\ FAILSAFE /!\  2014-06-11 16:38:38 +0530
+  Status: 500 Internal Server Error
+  /Users/user/RailsTutorials/sample_app/app/helpers/grav_helper.rb:3: syntax error, unexpected ':', expecting ';' or '\n'
+ def grav :s
+           ^
+/Users/user/RailsTutorials/sample_app/app/helpers/grav_helper.rb:8: syntax error, unexpected keyword_end, expecting $end
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `block in load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:250:in `depend_on'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:162:in `require_dependency'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:126:in `block in helper'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:120:in `block in helper'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/user/RailsTutorials/sample_app/app/controllers/application_controller.rb:5:in `<class:ApplicationController>'
+    /Users/user/RailsTutorials/sample_app/app/controllers/application_controller.rb:4:in `<top (required)>'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:406:in `block in load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:547:in `new_constants_in'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:405:in `load_file'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:285:in `require_or_load'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:451:in `load_missing_constant'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:106:in `const_missing_with_dependencies'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activesupport-2.3.18/lib/active_support/dependencies.rb:118:in `const_missing'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:89:in `rescue in dispatch'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:29:in `block in call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/query_cache.rb:28:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/activerecord-2.3.18/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/head.rb:9:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/methodoverride.rb:24:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/session/cookie_store.rb:99:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:10:in `synchronize'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/lock.rb:11:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/reloader.rb:34:in `run'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/actionpack-2.3.18/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rails-2.3.18/lib/rails/rack/static.rb:31:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/urlmap.rb:47:in `block in call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/urlmap.rb:41:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rails-2.3.18/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/content_length.rb:13:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/chunked.rb:15:in `call'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/rack-1.1.6/lib/rack/handler/mongrel.rb:67:in `process'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:165:in `block in process_client'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `each'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:164:in `process_client'
+    /Users/user/.rvm/gems/ruby-1.9.3-p484/gems/mongrel-1.2.0.pre2/lib/mongrel.rb:291:in `block (2 levels) in run'
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:38:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:38:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:38:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:39:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:39:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:39:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:40:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:40:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:40:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:40:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:40:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:40:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:41:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:41:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:41:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:41:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/users/show/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:41:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:41:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:42:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split) on line #2 of app/views/users/show.html.erb:
+1: <h2>
+2: <%= grav gravatar_for @user %>
+3: <%= h @user.name %>
+4: </h2>
+
+    app/helpers/grav_helper.rb:5:in `grav'
+    app/views/users/show.html.erb:2
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (26.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:42:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split) on line #2 of app/views/users/show.html.erb:
+1: <h2>
+2: <%= grav gravatar_for @user %>
+3: <%= h @user.name %>
+4: </h2>
+
+    app/helpers/grav_helper.rb:5:in `grav'
+    app/views/users/show.html.erb:2
+    <internal:prelude>:10:in `synchronize'
+
+Rendered rescues/_trace (16.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:42:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:42:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:42:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.3ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:42:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:42:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:42:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:46:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:46:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:46:49) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:48:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 26ms (View: 6, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:48:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:48:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 16:48:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 27ms (View: 7, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:48:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 16:48:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 17:41:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 59ms (View: 16, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:41:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:41:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 17:57:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 28ms (View: 18, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 17:57:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 17:57:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:04) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-11 17:57:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.5ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-11 17:57:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
