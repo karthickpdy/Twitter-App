@@ -10,7 +10,7 @@ development:
   password: 
   host: 127.0.0.1
   port: 3306
-  database: test1
+  database: sampleapp
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,7 +25,7 @@ test:
   password: 
   host: 127.0.0.1
   port: 3306
-  database: test1
+  database: sampleapp
 
 production:
   adapter: mysql2
@@ -37,4 +37,4 @@ production:
   password: 
   host: 127.0.0.1
   port: 3306
-  database: test1
+  database: sampleapp
