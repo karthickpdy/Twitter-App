@@ -3725,3 +3725,113 @@ ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.c
   <internal:prelude>:10:in `synchronize'
 
 Rendering rescues/layout (not_found)
+
+
+Processing PagesController#home (for 127.0.0.1 at 2014-06-12 11:10:17) [GET]
+Rendering template within layouts/application
+Rendering pages/home
+Rendered layouts/_stylesheets (1.2ms)
+Rendered layouts/_header (1.0ms)
+Rendered layouts/_footer (0.7ms)
+Completed in 109ms (View: 108, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-12 11:10:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-12 11:10:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2014-06-12 11:10:24) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: new and show):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-12 11:10:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Load (25.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.4ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 256ms (View: 34, DB: 25) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2014-06-12 11:10:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+Rendered layouts/_stylesheets (0.3ms)
+Rendered layouts/_header (0.2ms)
+Rendered layouts/_footer (0.1ms)
+Completed in 28ms (View: 21, DB: 0) | 200 OK [http://localhost/users/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-12 11:10:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/screen.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2014-06-12 11:10:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/blueprint/print.css" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSCHEMA (31.4ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSCHEMA (0.4ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (157.6ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime, `encrypted_password` varchar(255), `salt` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (229.3ms)[0m   [0;1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSCHEMA (0.4ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (129.5ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `schema_migrations`[0m
+  [4;36;1mSQL (148.2ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSCHEMA (0.4ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (32.7ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20140611093016')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20140610093837')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20140611052852')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20140611074824')[0m
+
+
+Processing ApplicationController#index to json (for 192.168.5.164 at 2014-06-17 15:23:53) [GET]
+  Parameters: {"wf_order_type"=>"desc", "wf_order"=>"created_at"}
+
+ActionController::RoutingError (No route matches "/helpdesk/tickets/filter/all_tickets" with {:method=>:get}):
+  <internal:prelude>:10:in `synchronize'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSCHEMA (0.3ms)[0m   [0;1mSHOW TABLES [0m
+  [4;35;1mSCHEMA (0.2ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (165.9ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime, `updated_at` datetime, `encrypted_password` varchar(255), `salt` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (335.7ms)[0m   [0;1mCREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)[0m
+  [4;35;1mSCHEMA (0.3ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (125.9ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `schema_migrations`[0m
+  [4;36;1mSQL (147.5ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSCHEMA (0.3ms)[0m   [0mSHOW TABLES [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20140611093016')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20140610093837')[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20140611052852')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20140611074824')[0m
