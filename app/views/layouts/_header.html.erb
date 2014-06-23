@@ -1,17 +1,17 @@
 <div id="header" class="round">
 
-    <% logo=i mage_tag( "logo.png", :alt=>"Sample App", :class => "round", :height => 100) %>
-        <%=l ink_to logo, root_path %>
+    <% logo=image_tag( "logo.png", :alt=>"Sample App", :class => "round", :height => 100) %>
+        <%=link_to logo, root_path %>
 
             <ul class="navigation round">
                 <li>
-                    <%=l ink_to "Home", root_path %>
+                    <%=link_to "Home", root_path %>
                 </li>
                 <li>
-                    <%=l ink_to "Help", '#' %>
+                    <%=link_to "Help", '#' %>
                 </li>
                 <li>
-                    <%=l ink_to "Sign in", '#' %>
+                    <%=link_to "Sign in", '#' %>
                 </li>
             </ul>
 
