@@ -5,6 +5,9 @@ module SessionsHelper
     cookies[:remember_token] = { :value => user.remember_token,:expires => 20.years.from_now.utc }
     self.current_user = user
   end
+  def authenticate
+    deny_access unless signed_in? 
+  end
 
   def current_user=(user)
     @current_user = user

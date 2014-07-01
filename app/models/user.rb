@@ -22,7 +22,12 @@ class User < ActiveRecord::Base
   # Password validations.
   validates_presence_of :password
   validates_length_of :password, :within => 6..40
+  has_many :microposts, :dependent => :destroy
 
+def feed
+Micropost.all(:conditions => ["user_id = ?", id])
+  
+end
 
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
