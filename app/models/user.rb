@@ -23,9 +23,18 @@ class User < ActiveRecord::Base
   validates_presence_of :password
   validates_length_of :password, :within => 6..40
   has_many :microposts, :dependent => :destroy
+  has_many :relationships, :foreign_key => "follower_id",:dependent => :destroy
+  has_many :following, :through => :relationships, :source => :followed
+
+
+  has_many :reverse_relationships, :foreign_key => "followed_id",
+                                   :class_name => "Relationship",
+                                   :dependent => :destroy
+  has_many :followers, :through => :reverse_relationships, :source => :follower
+
 
 def feed
-Micropost.all(:conditions => ["user_id = ?", id])
+Micropost.from_users_followed_by(self)
   
 end
 
@@ -50,6 +59,17 @@ end
     self.remember_token = encrypt("#{salt}--#{id}--#{Time.now.utc}") 
     save_without_validation
   end
+def following?(followed) 
+  relationships.find_by_followed_id(followed)
+end
+def follow!(followed) 
+  relationships.create!(:followed_id => followed.id)
+end
+
+def unfollow!(followed)
+ relationships.find_by_followed_id(followed).destroy
+end
+
 
   private
 

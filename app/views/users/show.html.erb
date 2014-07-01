@@ -5,7 +5,7 @@
                 <%=image_tag(grav gravatar_for @user, :alt=>"Sample App", :class => "round") %>
                     <%=h @user.name %>
             </h2>
-
+<%= render 'follow_form' if signed_in? %>
             <% unless @user.microposts.empty? %>
 <table class="microposts"> <%= render @microposts %>
 </table>
@@ -20,6 +20,7 @@
 
                 <strong>Microposts</strong> 
                 <%= @user.microposts.count %>
+                <%= render 'pages/stats' %>
 
         </td>
     </tr>
