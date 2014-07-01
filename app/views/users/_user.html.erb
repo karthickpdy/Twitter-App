@@ -1,0 +1,9 @@
+
+<li>
+<%=image_tag(grav gravatar_for user, :size => 30, :alt=>"Sample App", :class => "round") %>
+<%= link_to h(user.name), user %>
+ 
+<% if current_user.admin? %>
+| <%= link_to "delete", user, :method => :delete, :confirm => "You sure?" %>
+<% end %>
+ </li>

@@ -8,7 +8,6 @@ body {
 	padding-top: 20px;
 }
 #header img {
-	padding: 1em;
 	background: #fff;
 }
 #content {
@@ -114,4 +113,8 @@ margin: -7px; background-color: #c00; color: #fff;
 #errorExplanation p { color: #333; margin-bottom: 0; padding: 5px;
 }
 #errorExplanation ul li { font-size: 12px; list-style: square;
+}
+ul.users {
+margin-top: 1em; }
+.users li { list-style: none;
 }
